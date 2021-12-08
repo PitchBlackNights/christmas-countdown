@@ -26,6 +26,14 @@ body {
   font-family: "Fredericka the Great", cursive;
   font-size: 50px;
 }
+    
+#link {
+  padding-right: 30%;
+  text-align: center;
+  font-family: "Fredericka the Great", cursive;
+  font-size: 50px;
+  text-decoration: none;
+}
   </style>
   <script>
 CountDownTimer("12/25/2021 12:00 PM", "countdown"); //Month.Day
@@ -44,7 +52,7 @@ function CountDownTimer(dt, id) {
     var distance = end - now;
     if (distance < 0) {
       clearInterval(timer);
-      document.getElementById(id).innerHTML = "EXPIRED!";
+      CHRISTMAS();
 
       return;
     }
@@ -61,11 +69,18 @@ function CountDownTimer(dt, id) {
 
   timer = setInterval(showRemaining, 1000);
 }
+function CHRISTMAS() {
+  document.getElementById('countdown').innerHTML = "Merry Christmas!";
+  document.getElementById('till').innerHTML = "Share you favortie present(s) at:";
+  document.getElementById('link').href = "https://forms.gle/AqnzMRXxPv9tqwwT9";
+  document.getElementById('link').innerHTML = "https://forms.gle/AqnzMRXxPv9tqwwT9";
+};
   </script>
 </head>
 
 <body>
   <div id="countdown"></div>
   <p id="till">days till christmas</p>
+  <a id="link" href=""></a>
 </body>
 </html>

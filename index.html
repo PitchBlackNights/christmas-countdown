@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
@@ -34,9 +35,16 @@ body {
   font-size: 50px;
   text-decoration: none;
 }
+#link2 {
+  text-decoration: none;
+}
+#link2:visited {
+  color: #0000FF;
+}
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
   <script>
-CountDownTimer("12/25/2021 1:00 AM", "countdown"); //Month.Day
+CountDownTimer("12/8/2021 12:17 AM", "countdown"); //Month.Day
 
 function CountDownTimer(dt, id) {
   var end = new Date(dt);
@@ -72,10 +80,16 @@ function CountDownTimer(dt, id) {
 function CHRISTMAS() {
   document.getElementById('countdown').innerHTML = "Merry Christmas!";
   document.getElementById('till').innerHTML = "Share you favortie present(s) at:";
-  document.getElementById('link').href = "https://forms.gle/AqnzMRXxPv9tqwwT9";
-  document.getElementById('link').innerHTML = "https://forms.gle/AqnzMRXxPv9tqwwT9";
-  var audio = new Audio('christmas.mp3');
-  audio.play();
+  document.getElementById('link2').href = "https://forms.gle/AqnzMRXxPv9tqwwT9";
+  document.getElementById('link2').innerHTML = "https://forms.gle/AqnzMRXxPv9tqwwT9";
+  var sound = new Howl({
+    src: ['https://pitchblacknights.github.io/christmas-countdown/christmas.mp3'],a
+    volume: 0.5,
+    onend: function () {
+      sound.play()
+    }
+  });
+  sound.play()
 };
   </script>
 </head>
@@ -83,6 +97,6 @@ function CHRISTMAS() {
 <body>
   <div id="countdown"></div>
   <p id="till">days till christmas</p>
-  <a id="link" href=""></a>
+  <p id="link"><a id="link2" href=""></a></p>
 </body>
 </html>

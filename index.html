@@ -36,7 +36,7 @@ body {
 }
   </style>
   <script>
-CountDownTimer("12/25/2021 12:00 PM", "countdown"); //Month.Day
+CountDownTimer("12/25/2021 1:00 AM", "countdown"); //Month.Day
 
 function CountDownTimer(dt, id) {
   var end = new Date(dt);
@@ -74,6 +74,8 @@ function CHRISTMAS() {
   document.getElementById('till').innerHTML = "Share you favortie present(s) at:";
   document.getElementById('link').href = "https://forms.gle/AqnzMRXxPv9tqwwT9";
   document.getElementById('link').innerHTML = "https://forms.gle/AqnzMRXxPv9tqwwT9";
+  var audio = new Audio('christmas.mp3');
+  audio.play();
 };
   </script>
 </head>

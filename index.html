@@ -44,7 +44,7 @@ body {
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
   <script>
-CountDownTimer("12/25/2022 1:00 AM", "countdown"); //Month.Day
+CountDownTimer("12/25/"+new Date().getFullYear()+" 1:00 AM", "countdown"); //mm/dd/yyyy h:mm XM
 
 function CountDownTimer(dt, id) {
   var end = new Date(dt);
@@ -69,19 +69,14 @@ function CountDownTimer(dt, id) {
     var minutes = Math.floor((distance % _hour) / _minute);
     var seconds = Math.floor((distance % _minute) / _second);
 
-    document.getElementById(id).innerHTML = days + "days ";
-    document.getElementById(id).innerHTML += hours + "hrs ";
-    document.getElementById(id).innerHTML += minutes + "mins ";
-    document.getElementById(id).innerHTML += seconds + "secs";
+    document.getElementById(id).innerHTML = days + "days " + hours + "hrs " + minutes + "mins " + seconds + "secs";
   }
 
   timer = setInterval(showRemaining, 1000);
 }
 function CHRISTMAS() {
   document.getElementById('countdown').innerHTML = "Merry Christmas!";
-  document.getElementById('till').innerHTML = "Share you favortie present(s) at:";
-  document.getElementById('link2').href = "https://forms.gle/AqnzMRXxPv9tqwwT9";
-  document.getElementById('link2').innerHTML = "https://forms.gle/AqnzMRXxPv9tqwwT9";
+  document.getElementById('till').innerHTML = "";
   var sound = new Howl({
     src: ['https://pitchblacknights.github.io/christmas-countdown/christmas.mp3'],
     volume: 0.5,
@@ -96,7 +91,6 @@ function CHRISTMAS() {
 
 <body>
   <div id="countdown"></div>
-  <p id="till">days till christmas</p>
-  <p id="link"><a id="link2" href=""></a></p>
+  <p id="till">till christmas</p>
 </body>
 </html>
